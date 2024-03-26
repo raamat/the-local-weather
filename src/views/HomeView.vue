@@ -38,11 +38,7 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 function previewCity(searchResult) {
-  // console.log(searchResult);
-  // const name = searchResult.name;
-  // console.log(name);
-  // const region = searchResult.region;
-  // const country = searchResult.country;
+  console.log(searchResult);
   router.push({
     name: "cityView",
     params: {
@@ -50,7 +46,8 @@ function previewCity(searchResult) {
       region: searchResult.region.replaceAll(" ", "_"),
     },
     query: {
-      lat: searchResult.lat[1],
+      lat: searchResult.lat,
+      lon: searchResult.lon,
       preview: true,
     },
   });
