@@ -38,7 +38,6 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 function previewCity(searchResult) {
-  console.log(searchResult);
   router.push({
     name: "cityView",
     params: {
@@ -56,8 +55,7 @@ function previewCity(searchResult) {
 // Пример запроса из документации (https://www.weatherapi.com/docs/#apis-search):
 // JSON: http://api.weatherapi.com/v1/current.json?key=<YOUR_API_KEY>&q=London
 
-const BASE_URL = "http://api.weatherapi.com/v1/";
-const API_KEY = "1f672b032d5b4f77a3f172349242003";
+import { BASE_URL, API_KEY } from "../constants/constApi";
 
 const searchQuery = ref("");
 const queryTimeout = ref(null);

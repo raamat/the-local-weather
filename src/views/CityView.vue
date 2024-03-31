@@ -7,7 +7,6 @@
       </template>
     </Suspense>
   </div>
-  
 </template>
 
 <script setup>
