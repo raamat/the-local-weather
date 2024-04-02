@@ -129,7 +129,6 @@ async function getWeather() {
   try {
     const dataResponse = await fetch(
       `${BASE_URL}forecast.json?key=${API_KEY}&q=${route.query.lat},${route.query.lon}&days=7&lang=ru`
-      // `http://api.weatherapi.com/v1/forecast.json?key=1f672b032d5b4f77a3f172349242003&q=59.77,60.19&lang=ru`
     );
     const data = dataResponse.json();
     return data;
