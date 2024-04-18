@@ -5,9 +5,7 @@
       v-if="route.query.preview"
       class="text-white p-4 bg-weather-secondary w-full text-center"
     >
-      <p>
-        Чтобы начать отслеживать этот город, нажмите значок "+" .
-      </p>
+      <p>Чтобы начать отслеживать этот город, нажмите значок "+" .</p>
     </div>
     <!-- Обзор погоды -->
     <div class="flex flex-col items-center text-white py-12">
@@ -38,9 +36,9 @@
         >{{ Math.round(weatherData.current.feelslike_c) }}&deg;
       </p>
       <p>
-       {{ weatherData.current.condition.text }} 
+        {{ weatherData.current.condition.text }}
       </p>
-      
+
       <img
         :src="weatherData.current.condition.icon"
         alt=""
@@ -86,7 +84,7 @@
     <!-- Погода на неделю -->
     <div class="max-w-screen-md w-full py-12">
       <div class="mx-8 text-white">
-        <h2 class="mb-4">Прогноз на 7 дней</h2>
+        <h2 class="mb-4">Прогноз на 3 дня</h2>
         <div
           v-for="day in weatherData.forecast.forecastday"
           :key="day.dt"

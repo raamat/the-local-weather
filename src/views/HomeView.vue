@@ -29,6 +29,14 @@
         </template>
       </ul>
     </div>
+    <div class="flex flex-col gap-4">
+      <Suspense>
+        <CityList/>
+        <template #fallback>
+          <p>Загрузка...</p>
+        </template>
+      </Suspense>
+    </div>
   </main>
 </template>
 
@@ -56,6 +64,7 @@ function previewCity(searchResult) {
 // JSON: http://api.weatherapi.com/v1/current.json?key=<YOUR_API_KEY>&q=London
 
 import { BASE_URL, API_KEY } from "../constants/constApi";
+import CityList from "@/components/CityList.vue";
 
 const searchQuery = ref("");
 const queryTimeout = ref(null);
