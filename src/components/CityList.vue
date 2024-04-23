@@ -50,7 +50,7 @@ function goToCityView(city) {
   router.push({
     name: "cityView",
     params: { region: city.region, name: city.name },
-    query: { lat: city.coords.lat, lon: city.coords.lon },
+    query: { id: city.id, lat: city.coords.lat, lon: city.coords.lon },
   });
 }
 </script>

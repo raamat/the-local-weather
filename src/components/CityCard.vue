@@ -13,7 +13,7 @@
       </p>
       <div class="flex flex-col gap-2">
         <span>
-          ༄
+          <i class="fa-solid fa-wind text-blue-300"></i>
           {{
             (city.weather.wind_kph / 3.6).toFixed(1).replaceAll(".", ",")
           }}

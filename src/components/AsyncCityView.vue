@@ -115,11 +115,18 @@
         </div>
       </div>
     </div>
+    <div
+      class="flex items-center gap-2 py-12 text-white cursor-pointer duration-150 hover:text-red-500"
+      @click="removeCity"
+    >
+      <i class="fa-solid fa-trash"></i>
+      <p>Удалить город</p>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { BASE_URL, API_KEY } from "../constants/constApi";
 
 const route = useRoute();
@@ -145,4 +152,14 @@ async function getWeatherData() {
 }
 
 const weatherData = await getWeatherData();
+
+const router = useRouter();
+function removeCity() {
+  const cities = JSON.parse(localStorage.getItem("savedCities"));
+  const updatedCities = cities.filter((city) => city.id !== route.query.id);
+  localStorage.setItem("savedCities", JSON.stringify(updatedCities));
+  router.push({
+    name: "home",
+  })
+}
 </script>
