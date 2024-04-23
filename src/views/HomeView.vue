@@ -33,7 +33,7 @@
       <Suspense>
         <CityList/>
         <template #fallback>
-          <p>Загрузка...</p>
+          <CityCardSkeleton />
         </template>
       </Suspense>
     </div>
@@ -65,6 +65,7 @@ function previewCity(searchResult) {
 
 import { BASE_URL, API_KEY } from "../constants/constApi";
 import CityList from "@/components/CityList.vue";
+import CityCardSkeleton from "../components/CityCardSkeleton.vue";
 
 const searchQuery = ref("");
 const queryTimeout = ref(null);

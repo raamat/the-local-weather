@@ -145,6 +145,8 @@ async function getWeather() {
 async function getWeatherData() {
   try {
     const weatherData = await getWeather();
+    // Flicker Delay
+    await new Promise((res) => setTimeout(res, 300));
     return weatherData;
   } catch (err) {
     console.error(err);
