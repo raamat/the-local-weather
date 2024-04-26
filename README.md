@@ -1,17 +1,23 @@
 # Приложение для отслеживания погоды
 
-Приложение позволяет добавлять в список несколько населенных пунктов и отслеживать погоду. 
+Приложение позволяет добавлять в список несколько населенных пунктов и отслеживать погоду.
 Реализован [отложенный поиск.](https://doka.guide/js/debounce/)
+
+## Сайт
+
+[pogoda.raamat.pw](https://pogoda.raamat.pw/)
 
 ## Первоисточник
 
-Плейлист с YouTube-канала Net Ninja Weather [App Build (Vue 3 & Tailwind)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hfoy8vFQ5tbXO3vY0xhhUZ)
+Плейлист YouTube-канала Net Ninja Weather [App Build (Vue 3 & Tailwind)](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hfoy8vFQ5tbXO3vY0xhhUZ)
 
 ## Изменения относительно первоисточника
 
 - Вместо API [www.mapbox.com](https://www.mapbox.com/) (при регистрации требуется ввести данные банковской карты), применяется API [www.weatherapi.com](https://www.weatherapi.com/docs/) - миллион запросов в месяц на бесплатном тарифе.
 
 - Не используется библиотека Axios. Запрос к API написан на ванильном JavaScript: функция [fetch()](https://doka.guide/js/fetch/), синтаксический сахар [async/awai](https://doka.guide/js/async-await/)
+
+- Для рандомизации уникальных идентификаторов фиксированной длины вместо библиотеки [uid](https://www.npmjs.com/package/uid) используется [crypto.randomUUID()](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/randomUUID)
 
 ## :hammer: Инструменты разработки:
 

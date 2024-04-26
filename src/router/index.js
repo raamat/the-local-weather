@@ -9,13 +9,27 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      meta: {
+        title: "Главная",
+      },
     },
     {
       path: "/weather/:region/:name",
       name: "cityView",
       component: CityView,
+      meta: {
+        title: "Погода",
+      },
     },
   ],
 });
+
+router.beforeEach((to, from, next) => {
+  document.title = `${
+    to.params.region
+      ? `${to.params.name.replaceAll("_", " ")}`
+      : to.meta.title} | Прогноз погоды`;
+  next();
+})
 
 export default router;
